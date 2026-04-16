@@ -72,15 +72,43 @@
     font-size: 1.1rem;
     letter-spacing: .02em;
     color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .brand-session {
+    display: inline-block;
+    padding: 3px 10px 4px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--serif-jp);
+    font-size: .78rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .08em;
+    line-height: 1;
+    vertical-align: 2px;
+  }
+
+  .brand-main {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-weight: 500;
   }
 
   .brand-sub {
     font-family: var(--sans-jp);
     font-size: .75rem;
     color: var(--muted);
-    margin-left: 10px;
     font-style: normal;
     letter-spacing: .05em;
+  }
+
+  @media (max-width: 520px) {
+    .brand { font-size: .95rem; gap: 8px; }
+    .brand-session { font-size: .72rem; padding: 2px 8px 3px; }
   }
 
   .meta {
@@ -245,6 +273,184 @@
     font-size: .85rem;
     color: var(--ink-soft);
     border-left: 3px solid var(--accent);
+    line-height: 1.7;
+  }
+
+  /* === NAME FORM === */
+  .name-form {
+    margin-bottom: 28px;
+    padding: 20px 22px;
+    background: rgba(255,255,255,.4);
+    border: 1px solid var(--rule);
+  }
+
+  .name-field {
+    margin-bottom: 14px;
+  }
+  .name-field:last-of-type { margin-bottom: 0; }
+
+  .name-label {
+    display: block;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: .78rem;
+    color: var(--muted);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .name-label .jp {
+    font-family: var(--sans-jp);
+    font-style: normal;
+    font-size: .72rem;
+    color: var(--ink-soft);
+    margin-left: 8px;
+    letter-spacing: .02em;
+    text-transform: none;
+  }
+
+  .name-input {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: var(--sans-jp);
+    font-size: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    transition: border-color .15s, background .15s;
+    border-radius: 0;
+  }
+
+  .name-input:focus {
+    outline: none;
+    border-color: var(--ink);
+    background: #fff;
+  }
+
+  .name-error {
+    font-family: var(--sans-jp);
+    font-size: .82rem;
+    color: var(--wrong);
+    margin-top: 10px;
+    min-height: 1em;
+    font-weight: 500;
+  }
+
+  /* === STUDENT BANNER (Result Screen) === */
+  .student-banner {
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .student-name-jp {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: .7rem;
+    color: var(--paper);
+    opacity: .65;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+
+  .student-name {
+    font-family: var(--serif-jp);
+    font-size: 1.2rem;
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+
+  .student-id {
+    font-family: var(--serif-en);
+    font-size: .95rem;
+    color: var(--paper);
+    opacity: .75;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .student-datetime {
+    font-family: var(--serif-en);
+    font-size: .85rem;
+    color: var(--paper);
+    opacity: .7;
+    font-variant-numeric: tabular-nums;
+    font-style: italic;
+  }
+
+  @media (max-width: 520px) {
+    .student-banner {
+      padding: 14px 16px;
+      gap: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .student-name { font-size: 1.05rem; }
+    .student-datetime { font-size: .8rem; }
+  }
+
+  /* === SUBMIT NOTICE === */
+  .submit-notice {
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    background: #fffaf0;
+    border: 2px solid var(--accent);
+    border-left-width: 6px;
+  }
+
+  .submit-notice-label {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: .72rem;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .submit-notice-body {
+    font-family: var(--sans-jp);
+    font-size: .92rem;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+
+  .submit-notice-body strong {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .submit-notice-caution {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+    font-size: .82rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .submit-notice-caution u {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 520px) {
+    .submit-notice { padding: 14px 16px; }
+    .submit-notice-body { font-size: .88rem; }
+    .submit-notice-body strong { font-size: .95rem; }
+    .submit-notice-caution { font-size: .78rem; }
   }
 
   /* === QUIZ SCREEN === */
@@ -1196,17 +1402,47 @@ QUESTIONS.push(...QUESTIONS_DATA);
 // QUIZ LOGIC
 // =============================================================================
 (function() {
-  const STORAGE_KEY = 'toeic_quiz_progress_v1';
+  // ============================================================
+  // SESSION CONFIG — 各回ごとにここを書き換える
+  // ============================================================
+  const SESSION_NUMBER = 1;     // 第何回か（1〜15）
+  const SESSION_TITLE = '';     // 回のサブタイトル（任意、空欄可）例: '金フレ 頻出50語'
+  // ============================================================
+
+  const STORAGE_KEY = 'toeic_quiz_progress_v2_s' + SESSION_NUMBER;
   const TOTAL = 0; // will be set after data loaded
   const app = document.getElementById('app');
 
+  // Fisher–Yates shuffle
+  function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function makeOrder() {
+    return shuffleArray(Array.from({length: QUESTIONS.length}, (_, i) => i));
+  }
+
+  // Get the current question based on shuffled order
+  function currentQ() {
+    return QUESTIONS[state.order[state.index]];
+  }
+
   let state = {
     mode: 'start',      // 'start' | 'quiz' | 'result' | 'review'
-    index: 0,           // current question index
-    answers: [],        // array of {chosen: 1-4, correct: boolean} or null
-    answered: false,    // has user answered current question
-    reviewList: [],     // indices of wrong questions for review
-    reviewPos: 0,       // position in reviewList
+    index: 0,           // current position in shuffled order (0-99)
+    answers: [],        // index = position in shuffled order
+    answered: false,
+    reviewList: [],     // positions in shuffled order
+    reviewPos: 0,
+    studentName: '',
+    studentId: '',
+    completedAt: null,
+    order: [],          // shuffled indices into QUESTIONS array
   };
 
   function save() {
@@ -1214,6 +1450,10 @@ QUESTIONS.push(...QUESTIONS_DATA);
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         index: state.index,
         answers: state.answers,
+        studentName: state.studentName,
+        studentId: state.studentId,
+        completedAt: state.completedAt,
+        order: state.order,
       }));
     } catch(e) {}
   }
@@ -1255,9 +1495,14 @@ QUESTIONS.push(...QUESTIONS_DATA);
     const total = QUESTIONS.length;
     const correct = countCorrect();
     const percent = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+    const sessionLabel = `第${SESSION_NUMBER}回`;
     return `
       <div class="header">
-        <div class="brand">TOEIC Vocab &amp; Grammar <span class="brand-sub">語彙・文法 100</span></div>
+        <div class="brand">
+          <span class="brand-session">${sessionLabel}</span>
+          <span class="brand-main">TOEIC Vocab &amp; Grammar</span>
+          ${SESSION_TITLE ? `<span class="brand-sub">${escapeHtml(SESSION_TITLE)}</span>` : ''}
+        </div>
         ${showMeta ? `<div class="meta">${answered}/${total} · ${percent}%</div>` : ''}
       </div>
     `;
@@ -1317,8 +1562,21 @@ QUESTIONS.push(...QUESTIONS_DATA);
         ${hasSaved ? `
           <div class="resume-note">
             前回の記録：<strong>${answered}/${QUESTIONS.length}問</strong> 回答済み・正答 <strong>${correct}</strong>問
+            ${saved.studentName ? `<br>記録者：<strong>${escapeHtml(saved.studentName)}</strong>${saved.studentId ? ` (${escapeHtml(saved.studentId)})` : ''}` : ''}
           </div>
         ` : ''}
+
+        <div class="name-form">
+          <div class="name-field">
+            <label class="name-label" for="input-name">Student Name <span class="jp">氏名（必須）</span></label>
+            <input type="text" id="input-name" class="name-input" placeholder="例：山田 太郎" value="${escapeHtml(saved && saved.studentName ? saved.studentName : '')}" autocomplete="name" required>
+          </div>
+          <div class="name-field">
+            <label class="name-label" for="input-id">Student ID <span class="jp">学籍番号（任意）</span></label>
+            <input type="text" id="input-id" class="name-input" placeholder="例：2026001" value="${escapeHtml(saved && saved.studentId ? saved.studentId : '')}" autocomplete="off">
+          </div>
+          <div class="name-error" id="name-error"></div>
+        </div>
 
         <div class="btn-row">
           ${hasSaved ? `
@@ -1333,28 +1591,56 @@ QUESTIONS.push(...QUESTIONS_DATA);
           `}
         </div>
 
-        <div class="footer">Ink on paper · offline-ready</div>
+        <div class="footer">© Kaoruko Takechi 2026</div>
       </div>
     `;
 
     app.querySelectorAll('[data-action]').forEach(el => {
       el.addEventListener('click', () => {
         const act = el.dataset.action;
+        const nameInput = document.getElementById('input-name');
+        const idInput = document.getElementById('input-id');
+        const errorEl = document.getElementById('name-error');
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const idVal = idInput ? idInput.value.trim() : '';
+
         if (act === 'start' || act === 'restart') {
+          if (!nameVal) {
+            if (errorEl) errorEl.textContent = '氏名を入力してください。';
+            if (nameInput) nameInput.focus();
+            return;
+          }
+          state.studentName = nameVal;
+          state.studentId = idVal;
+          state.completedAt = null;
           state.answers = new Array(QUESTIONS.length).fill(null);
+          state.order = makeOrder();
           state.index = 0;
           state.answered = false;
           state.mode = 'quiz';
           clearSave();
+          save();
           render();
         } else if (act === 'resume') {
+          if (!nameVal) {
+            if (errorEl) errorEl.textContent = '氏名を入力してください。';
+            if (nameInput) nameInput.focus();
+            return;
+          }
           const s = load();
-          state.answers = s.answers && s.answers.length === QUESTIONS.length
+          state.studentName = nameVal;
+          state.studentId = idVal;
+          state.completedAt = s && s.completedAt ? s.completedAt : null;
+          state.answers = s && s.answers && s.answers.length === QUESTIONS.length
             ? s.answers
             : new Array(QUESTIONS.length).fill(null);
-          state.index = typeof s.index === 'number' ? Math.min(s.index, QUESTIONS.length - 1) : 0;
+          state.order = s && s.order && s.order.length === QUESTIONS.length
+            ? s.order
+            : makeOrder();
+          state.index = s && typeof s.index === 'number' ? Math.min(s.index, QUESTIONS.length - 1) : 0;
           state.answered = state.answers[state.index] != null;
           state.mode = 'quiz';
+          save();
           render();
         }
       });
@@ -1362,7 +1648,12 @@ QUESTIONS.push(...QUESTIONS_DATA);
   }
 
   function renderQuiz() {
-    const q = QUESTIONS[state.index];
+    // Safety: if order is missing (old save), generate now
+    if (!state.order || state.order.length !== QUESTIONS.length) {
+      state.order = makeOrder();
+      save();
+    }
+    const q = currentQ();
     const existing = state.answers[state.index];
     const answered = existing != null;
     state.answered = answered;
@@ -1399,6 +1690,7 @@ QUESTIONS.push(...QUESTIONS_DATA);
           </button>
         ` : ''}
       </div>
+      <div class="footer">© Kaoruko Takechi 2026</div>
     `;
 
     app.querySelectorAll('.option:not([disabled])').forEach(el => {
@@ -1452,6 +1744,12 @@ QUESTIONS.push(...QUESTIONS_DATA);
     const wrong = answered - correct;
     const percent = answered > 0 ? Math.round((correct / answered) * 100) : 0;
 
+    // Set completion timestamp on first arrival at result screen
+    if (!state.completedAt) {
+      state.completedAt = new Date().toISOString();
+      save();
+    }
+
     let msg = '';
     if (percent >= 90) msg = 'Excellent — 9割超え。この水準を維持。';
     else if (percent >= 75) msg = 'Strong — 安定した実力。誤答を見直して完璧に。';
@@ -1463,8 +1761,32 @@ QUESTIONS.push(...QUESTIONS_DATA);
       .map((a, i) => (a && !a.correct) ? i : -1)
       .filter(i => i >= 0);
 
+    const completedDate = new Date(state.completedAt);
+    const completedStr = completedDate.toLocaleString('ja-JP', {
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+
     app.innerHTML = `
       ${renderHeader(false)}
+      <div class="student-banner">
+        <div>
+          <span class="student-name-jp">Student</span>
+          <span class="student-name">${escapeHtml(state.studentName || '(名前未入力)')}</span>
+          ${state.studentId ? `<span class="student-id"> · ${escapeHtml(state.studentId)}</span>` : ''}
+        </div>
+        <div class="student-datetime">${completedStr}</div>
+      </div>
+
+      <div class="submit-notice">
+        <div class="submit-notice-label">Submission · 提出方法</div>
+        <div class="submit-notice-body">
+          <strong>この画面全体をスクリーンショットして、先生に提出してください。</strong><br>
+          氏名・学籍番号・正答率・完了日時がこの1画面に収まっています。
+          <div class="submit-notice-caution">※ 下の「間違いを復習」を押すと別画面に移ります。スクリーンショットは<u>この画面</u>を撮ってください。</div>
+        </div>
+      </div>
+
       <div class="results">
         <div class="results-eyebrow">Result</div>
         <h1 class="results-title">お疲れさまでした。</h1>
@@ -1496,7 +1818,7 @@ QUESTIONS.push(...QUESTIONS_DATA);
           <button class="btn btn-ghost" data-action="restart">最初から解き直す</button>
         </div>
 
-        <div class="footer">${new Date().toLocaleDateString('ja-JP', {year:'numeric', month:'long', day:'numeric'})}</div>
+        <div class="footer">© Kaoruko Takechi 2026</div>
       </div>
     `;
 
@@ -1509,11 +1831,14 @@ QUESTIONS.push(...QUESTIONS_DATA);
           state.mode = 'review';
           render();
         } else if (act === 'restart') {
+          // Keep name/id but reset progress, re-shuffle for new attempt
           state.answers = new Array(QUESTIONS.length).fill(null);
+          state.order = makeOrder();
           state.index = 0;
           state.answered = false;
+          state.completedAt = null;
           state.mode = 'quiz';
-          clearSave();
+          save();
           render();
         }
       });
@@ -1527,9 +1852,9 @@ QUESTIONS.push(...QUESTIONS_DATA);
       return;
     }
 
-    const qIdx = state.reviewList[state.reviewPos];
-    const q = QUESTIONS[qIdx];
-    const existing = state.answers[qIdx];
+    const qPos = state.reviewList[state.reviewPos];   // position in shuffled order
+    const q = QUESTIONS[state.order[qPos]];            // resolve to actual question
+    const existing = state.answers[qPos];
     const reviewTotal = state.reviewList.length;
 
     app.innerHTML = `
@@ -1538,7 +1863,7 @@ QUESTIONS.push(...QUESTIONS_DATA);
         <div class="review-title">Review<span class="review-title-jp">間違えた問題の復習</span></div>
         <div class="review-count">${state.reviewPos + 1} / ${reviewTotal}</div>
       </div>
-      <div class="question-num">Question ${qIdx + 1}</div>
+      <div class="question-num">Question ${qPos + 1}</div>
       <div class="question">${escapeHtml(q.q)}</div>
       <div class="options">
         ${q.opts.map((opt, i) => {
@@ -1563,6 +1888,7 @@ QUESTIONS.push(...QUESTIONS_DATA);
           ${state.reviewPos < reviewTotal - 1 ? `<button class="btn" data-action="next">次 →</button>` : `<button class="btn" data-action="result">完了 →</button>`}
         </div>
       </div>
+      <div class="footer">© Kaoruko Takechi 2026</div>
     `;
 
     app.querySelectorAll('[data-action]').forEach(el => {
